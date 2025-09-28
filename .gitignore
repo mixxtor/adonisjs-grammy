@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+coverage/
+.vscode/
+.idea/
+.npmrc
+test/__app/
+
+.DS_STORE
+.nyc_output
+*.sublime-project
+*.sublime-workspace
+*.log
+shrinkwrap.yaml
+yarn.lock
+package-lock.json

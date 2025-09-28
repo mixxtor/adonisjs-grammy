@@ -1,0 +1,20 @@
+{{{
+  exports({ to: app.configPath('grammy.ts') })
+}}}
+import env from '#start/env'
+import { defineConfig } from "@mixxtor/adonisjs-grammy";
+
+const grammyConfig = defineConfig({
+  active: env.get('TELEGRAM_ACTIVE', true),
+  apiToken: env.get('TELEGRAM_BOT_TOKEN'),
+  timeout: {
+    onTimeout: 'throw',
+    timeoutMs: 10000,
+  },
+  webhook: {
+    path: env.get('TELEGRAM_API_WEBHOOK_ROUTE_PATH)
+    secret: env.get('TELEGRAM_API_WEBHOOK_SECRET'),
+  },
+})
+
+export default grammyConfig
