@@ -39,13 +39,13 @@ export default class GrammyProvider<C extends Context = Context> {
     const logger = await this.app.container.make('logger')
     const config = this.app.config.get<GrammyConfig<C>>('grammy', this.#config)
 
-    const { apiToken, timeout: timeoutConfig, webhook } = config
+    const { skipCheckToken: skipInit = false, apiToken, timeout: timeoutConfig, webhook } = config
     const { timeoutMs: ms, onTimeout: timeout } = timeoutConfig || {}
     const { routePath: webhookPath, secret: webhookSecret } = webhook || {}
 
     this.#bot = await this.app.container.make('grammy')
 
-    if (!this.#initialized) {
+    if (!this.#initialized && !skipInit) {
       await this.#bot.init()
       this.#initialized = true
     }

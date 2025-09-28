@@ -30,6 +30,7 @@ export async function configure(command: Configure) {
    */
   await codemods.defineEnvVariables({
     TELEGRAM_BOT_TOKEN: '',
+    TELEGRAM_API_WEBHOOK_ROUTE_PATH: '',
     TELEGRAM_API_WEBHOOK_SECRET: '',
   })
 
@@ -40,6 +41,7 @@ export async function configure(command: Configure) {
     leadingComment: 'Variables for configuring the grammy package',
     variables: {
       TELEGRAM_BOT_TOKEN: 'Env.schema.string()',
+      TELEGRAM_API_WEBHOOK_ROUTE_PATH: 'Env.schema.string.optional()',
       TELEGRAM_API_WEBHOOK_SECRET: 'Env.schema.string.optional()',
     },
   })

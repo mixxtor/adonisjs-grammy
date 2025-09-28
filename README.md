@@ -61,6 +61,7 @@ The `config/grammy.ts` file allows you to customize the following options:
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
 | apiToken | string | `process.env.TELEGRAM_BOT_TOKEN` | The Telegram Bot API token |
+| skipCheckToken | boolean | `false` | Skip checking if the API token is valid before starting the bot by `getMe` request |
 | timeout | object | `undefined` | Webhook request timeout config |
 | timeout.onTimeout | 'throw' \| 'return' \| Function | 'throw' | Defines behavior when webhook request times out |
 | timeout.timeoutMs | number | 10000 | Webhook request timeout in milliseconds |
@@ -77,6 +78,7 @@ import { defineConfig } from '@mixxtor/adonisjs-grammy'
 
 const grammyConfig = defineConfig({
   apiToken: env.get('TELEGRAM_BOT_TOKEN'),
+  skipCheckToken: false,
   
   // Timeout handling
   timeout: {

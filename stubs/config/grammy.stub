@@ -6,6 +6,7 @@ import { defineConfig } from "@mixxtor/adonisjs-grammy";
 
 const grammyConfig = defineConfig({
   apiToken: env.get('TELEGRAM_BOT_TOKEN'),
+  skipCheckToken: false,
   timeout: {
     onTimeout: 'throw',
     timeoutMs: 10000,

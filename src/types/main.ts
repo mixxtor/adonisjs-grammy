@@ -19,6 +19,10 @@ export interface GrammyConfig<C extends Context = Context> {
    */
   apiToken: string
   /**
+   * Skip token check `getMe` to avoid exception
+   */
+  skipCheckToken?: boolean
+  /**
    * Timeout for webhook
    * @default 10000 ms
    */
