@@ -50,7 +50,6 @@ The configuration file is located at `config/grammy.ts`. Here are the available 
 
 | Variable | Type | Required | Description |
 |----------|------|----------|-------------|
-| TELEGRAM_ACTIVE | boolean | Yes | Active status of this plugin |
 | TELEGRAM_BOT_TOKEN | string | Yes | Your Telegram Bot API token obtained from [@BotFather](https://t.me/BotFather) |
 | TELEGRAM_API_WEBHOOK_ROUTE_PATH | string | No | Optional route path of your webhook endpoint |
 | TELEGRAM_API_WEBHOOK_SECRET | string | No | Optional secret key to secure your webhook endpoint |
@@ -61,7 +60,6 @@ The `config/grammy.ts` file allows you to customize the following options:
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
-| active | boolean | `process.env.TELEGRAM_ACTIVE` | Active status of this plugin |
 | apiToken | string | `process.env.TELEGRAM_BOT_TOKEN` | The Telegram Bot API token |
 | timeout | object | `undefined` | Webhook request timeout config |
 | timeout.onTimeout | 'throw' \| 'return' \| Function | 'throw' | Defines behavior when webhook request times out |
@@ -78,7 +76,6 @@ import env from '#start/env'
 import { defineConfig } from '@mixxtor/adonisjs-grammy'
 
 const grammyConfig = defineConfig({
-  active: env.get('TELEGRAM_ACTIVE'),
   apiToken: env.get('TELEGRAM_BOT_TOKEN'),
   
   // Timeout handling

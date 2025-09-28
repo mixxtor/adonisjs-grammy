@@ -14,10 +14,6 @@ export interface GrammyService<C extends Context = Context> extends Grammy<C> {}
 
 export interface GrammyConfig<C extends Context = Context> {
   /**
-   * Active flag for the bot
-   */
-  active: boolean
-  /**
    * Bot API token
    * @default process.env.TELEGRAM_BOT_TOKEN
    */

@@ -5,7 +5,6 @@ import env from '#start/env'
 import { defineConfig } from "@mixxtor/adonisjs-grammy";
 
 const grammyConfig = defineConfig({
-  active: env.get('TELEGRAM_ACTIVE', true),
   apiToken: env.get('TELEGRAM_BOT_TOKEN'),
   timeout: {
     onTimeout: 'throw',

@@ -20,7 +20,6 @@ export default class GrammyProvider<C extends Context = Context> {
   #initialized = false
 
   #config: GrammyConfig<C> = {
-    active: true,
     apiToken: '',
   }
 
@@ -40,13 +39,9 @@ export default class GrammyProvider<C extends Context = Context> {
     const logger = await this.app.container.make('logger')
     const config = this.app.config.get<GrammyConfig<C>>('grammy', this.#config)
 
-    const { active = true, apiToken, timeout: timeoutConfig, webhook } = config
+    const { apiToken, timeout: timeoutConfig, webhook } = config
     const { timeoutMs: ms, onTimeout: timeout } = timeoutConfig || {}
     const { routePath: webhookPath, secret: webhookSecret } = webhook || {}
-
-    if (!active) {
-      return
-    }
 
     this.#bot = await this.app.container.make('grammy')
 

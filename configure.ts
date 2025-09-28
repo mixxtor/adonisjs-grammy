@@ -29,7 +29,6 @@ export async function configure(command: Configure) {
    * Define env variables for the selected transports
    */
   await codemods.defineEnvVariables({
-    TELEGRAM_ACTIVE: true,
     TELEGRAM_BOT_TOKEN: '',
     TELEGRAM_API_WEBHOOK_SECRET: '',
   })
@@ -40,7 +39,6 @@ export async function configure(command: Configure) {
   await codemods.defineEnvValidations({
     leadingComment: 'Variables for configuring the grammy package',
     variables: {
-      TELEGRAM_ACTIVE: 'Env.schema.boolean()',
       TELEGRAM_BOT_TOKEN: 'Env.schema.string()',
       TELEGRAM_API_WEBHOOK_SECRET: 'Env.schema.string.optional()',
     },
