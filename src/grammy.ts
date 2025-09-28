@@ -9,17 +9,10 @@
 
 import { Bot, type Context } from 'grammy'
 import { GrammyConfig } from './types/main.js'
-import logger from '@adonisjs/core/services/logger'
 
 class Grammy<C extends Context = Context> extends Bot {
   constructor(config: GrammyConfig<C>) {
-    if (config.active) {
-      try {
-        super(config.apiToken, config.botConfig)
-      } catch (error) {
-        logger.error(error)
-      }
-    }
+    super(config.apiToken, config.botConfig)
   }
 }
 
