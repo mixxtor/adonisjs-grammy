@@ -1,7 +1,7 @@
 {
   "name": "@mixxtor/adonisjs-grammy",
   "description": "Integration between AdonisJS with the Telegram Bot API using Grammy framework",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "node": ">=20"
   },
